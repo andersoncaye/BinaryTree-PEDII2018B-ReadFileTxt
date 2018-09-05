@@ -17,8 +17,9 @@ public class Line {
     public Line(String[] history) {
         this.history = history;
         String e = this.history[this.history.length-1];
-        this.element = new Node(e.split(" [")[0]);
-        this.value = Integer.parseInt( e.substring(e.indexOf("[")+1, e.indexOf("]")-1) );
+        e = e.substring(e.indexOf("[")+1, e.indexOf("]")-1);
+        this.element = new Node(e);
+        this.value = Integer.parseInt( e );
     }   
     
     public String[] getHistory() {

@@ -25,11 +25,12 @@ public class Principal {
             System.out.println(array.get(i).getElement().element);
         }
         
-//        TreeVisualization.svg_start();
-//        
-//        TreeVisualization.svg(new Node(""), 764, 30, 80);
-//        
-//        TreeVisualization.svg_finish();
+        System.out.println("\n\n");
+        TreeVisualization.svg_start();
+        
+        TreeVisualization.svg(bst.getTree().getRoot(), 764, 30, 80);
+        
+        TreeVisualization.svg_finish();
     }
     
 }
