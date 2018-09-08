@@ -36,17 +36,34 @@ public class BinarySearchTree {
                 d.put(this.array.get(i).getHistory().length, p);
             }
         }
-        insert(this.array);
+
+        for (Integer i : d.keySet()) {
+            insert(d.get(i));
+        }
     }
 
-    public boolean insert(ArrayList<Line> array) {
-        Node n;
-        for(Integer i : d.keySet()){
-            if(i == 1){ tree = new BinaryTree(this.d.get(1).getLeft()); n = tree.getRoot(); }
-            
-            tree
-            n.left;
-            n.right
+    public boolean insert(Pares s) {
+        if (tree == null) {
+            tree = new BinaryTree(s.getLeft(), s.getLeftValue());
+            return true;
+        }
+        Node n = this.tree.getRoot();
+        while (n != null) {
+
+            if (n.left == null) {
+                n.left = new Node(s.getLeft(), s.getLeftValue());
+            } else {
+                n = n.left;
+            }
+        }
+        n = this.tree.getRoot();
+        while (n != null) {
+            if (n.right == null) {
+                n.right = new Node(s.getRight(), s.getRightValue());
+            } else {
+                n = n.right;
+            }
+
         }
         return false;
     }

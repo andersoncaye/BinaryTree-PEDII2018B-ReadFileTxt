@@ -4,8 +4,8 @@ public class BinaryTree {
 
     private Node root;
 
-    public BinaryTree(String s) {
-        Node n = new Node(s);
+    public BinaryTree(String s, Integer value) {
+        Node n = new Node(s, value);
         this.root = n;
     }
 
@@ -13,23 +13,23 @@ public class BinaryTree {
         return this.root;
     }
 
-    public Node addLeftChild(Node p, String s) {
+    public Node addLeftChild(Node p, String s, Integer value) {
         if (p.left != null) {
             System.err.println("node has left child");
             return null;
         }
-        Node n = new Node(s);
+        Node n = new Node(s, value);
         n.parent = p;
         p.left = n;
         return n;
     }
     
-    public Node addRightChild(Node p, String s) {
+    public Node addRightChild(Node p, String s, Integer value) {
         if (p.right != null) {
             System.err.println("node has right child");
             return null;
         }
-        Node n = new Node(s);
+        Node n = new Node(s, value);
         n.parent = p;
         p.right = n;
         return n;

@@ -5,9 +5,11 @@ public class Node {
     public Node left;
     public Node right;
     public String element;
+    public int value;
     
-    public Node(String s){
+    public Node(String s, Integer value){
         this.element = s;
+        this.value = value;
     }
     
     public boolean isRoot() {
