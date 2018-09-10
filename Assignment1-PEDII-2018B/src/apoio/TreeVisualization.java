@@ -8,7 +8,7 @@ public class TreeVisualization {
         System.out.println();
 
         System.out.println("  <style type=\"text/css\">");
-        System.out.println("      .label { font: normal 24px sans-serif; stroke-width: 0; fill: black }");
+        System.out.println("      .label { font: normal 14px sans-serif; stroke-width: 0; fill: black }");
         System.out.println("  </style>");
         System.out.println();
 
@@ -38,7 +38,7 @@ public class TreeVisualization {
         System.out.println("    <circle cx=\"" + x + "\" cy=\"" + y
                 + "\" r=\"20\" fill=\"#55cccc\" />");
         System.out.println("    <text  x=\"" + (x - 8) + "\"  y=\"" + (y + 8)
-                + "\" class=\"label\">" + n.element + "</text>");
+                + "\" class=\"label\">" + n.element.split(" ! ")[0] + "</text>");
 
         if (n.left != null) {
             svg(n.left, leftx, lefty, d / 2);

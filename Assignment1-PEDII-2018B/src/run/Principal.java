@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Principal {
     
     public static void main(String[] args) {
-        Arquivo file = new Arquivo("dataset-b-small.txt");
+        Arquivo file = new Arquivo("dataset-b-large.txt");
         ArrayList<Line> array = new ArrayList();
         if( file.abrirLeitura() ){
             String lin = file.lerLinha();
@@ -28,7 +28,7 @@ public class Principal {
         System.out.println("\n\n");
         TreeVisualization.svg_start();
         
-        TreeVisualization.svg(bst.getTree().getRoot(), 764, 30, 80);
+        TreeVisualization.svg(bst.getTree().getRoot(), 400, 30, 200);
         
         TreeVisualization.svg_finish();
     }

@@ -17,10 +17,11 @@ public class Line {
     public Line(String[] history) {
         this.history = history;
         String e = this.history[this.history.length-1];
-        e = e.substring(e.indexOf("[")+1, e.indexOf("]")-1);
+        String n = e.substring(0, 3);
+        e = e.substring(e.indexOf("[")+1, e.indexOf("]"));
         
         this.value = Integer.parseInt( e );
-        this.element = new Node(e);
+        this.element = new Node(n);
     }   
     
     public String[] getHistory() {
