@@ -38,33 +38,42 @@ public class BinarySearchTree {
         }
 
         for (Integer i : d.keySet()) {
-            insert(d.get(i));
+            if(i ==1 ){
+                insert(d.get(i).getLeft(), d.get(i).getLeftValue());
+            } else {
+                insert(d.get(i).getLeft(), d.get(i).getLeftValue());
+                insert(d.get(i).getRight(), d.get(i).getRightValue());
+            }
         }
     }
 
-    public boolean insert(Pares s) {
-        if (tree == null) {
-            tree = new BinaryTree(s.getLeft(), s.getLeftValue());
-            return true;
-        }
-        Node n = this.tree.getRoot();
+    public boolean insert(String s, Integer v) {
+        Node n = null;
+        if(this.tree != null){ n = this.tree.getRoot(); }
+        else { tree = new BinaryTree(s + " ! " + v); n = this.tree.getRoot(); }
         while (n != null) {
-
-            if (n.left == null) {
-                n.left = new Node(s.getLeft(), s.getLeftValue());
-            } else {
-                n = n.left;
+            if (n.element.equals(s + " ! " + v)) {
+                return true;
             }
-        }
-        n = this.tree.getRoot();
-        while (n != null) {
-            if (n.right == null) {
-                n.right = new Node(s.getRight(), s.getRightValue());
-            } else {
-                n = n.right;
+            if (v < Integer.parseInt(n.element.split(" ! ")[1])){
+                    if (n.left == null) {
+                    n.left = new Node(s + " ! " + v);
+                    return true;
+                } else {
+                    n = n.left;
+                }
+            }
+            if (v > Integer.parseInt(n.element.split(" ! ")[1])) {
+                if (n.right == null) {
+                    n.right = new Node(s + " ! " + v);
+                    return true;
+                } else {
+                    n = n.right;
+                }
             }
 
         }
+//        }
         return false;
     }
 

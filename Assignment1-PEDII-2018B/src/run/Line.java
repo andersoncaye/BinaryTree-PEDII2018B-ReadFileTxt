@@ -20,7 +20,7 @@ public class Line {
         e = e.substring(e.indexOf("[")+1, e.indexOf("]")-1);
         
         this.value = Integer.parseInt( e );
-        this.element = new Node(e, this.value);
+        this.element = new Node(e);
     }   
     
     public String[] getHistory() {
