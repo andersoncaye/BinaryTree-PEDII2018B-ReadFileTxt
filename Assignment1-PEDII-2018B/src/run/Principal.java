@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Principal {
     
     public static void main(String[] args) {
-        Arquivo file = new Arquivo("dataset-b-large.txt");
+        Arquivo file = new Arquivo("dataset-b-small.txt");
         ArrayList<Line> array = new ArrayList();
         if( file.abrirLeitura() ){
             String lin = file.lerLinha();
